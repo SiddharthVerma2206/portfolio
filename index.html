@@ -1,13 +1,887 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="en"></html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Code</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  background-color: #25b79f;
+  height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+}
+
+/* ////........Navbar.......//// */
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 500;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.menu-items {
+  display: flex;
+}
+
+.menu-items li {
+  list-style: none;
+  padding: 1rem;
+}
+
+.menu-items a {
+  text-decoration: none;
+  color: #f0f0e6;
+  font-size: 1.2rem;
+  padding: 0.3rem;
+}
+
+.menu-items a:hover {
+  border-bottom: 2px solid #f0f0e6;
+}
+
+.navbar .logo {
+  order: 1;
+  color: #f0f0e6;
+  font-size: 2rem;
+}
+
+/* ////........Home Content........//// */
+
+.home-content .name {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #07374a;
+  width: 100%;
+  text-align: center;
+}
+
+.home-content .name h1 {
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.home-content .name p {
+  color: #f0f0e6;
+  font-size: 1.5rem;
+}
+
+.angle-down-icon {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  border: 3px solid #07374a;
+  border-radius: 50%;
+}
+
+.angle-down-icon a {
+  text-decoration: none;
+  color: #07374a;
+  padding: 1rem;
+}
+
+/* ////........About Me........//// */
+
+.about-me {
+  background-color: #07374a;
+  padding: 6rem 0;
+}
+
+.about-me .about-heading {
+  color: #25b79f;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.about-content img {
+  height: 210px;
+  width: 210px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.about-content p {
+  font-size: 1.2rem;
+  color: #f0f0e6;
+  padding: 0 2.3rem;
+  text-align: center;
+}
+
+.skills .skills-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #25b79f;
+  text-align: center;
+}
+
+.about-me .about-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.about-content .left-content {
+  flex-basis: 45%;
+  text-align: center;
+}
+
+.about-content .right-content {
+  flex-basis: 45%;
+}
+
+/* ///.....Skill Section....../// */
+
+.skills {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.skills-heading {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.skills-pill {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.badge-pill {
+  font-size: 1em;
+  padding: 10px 20px;
+  border-radius: 50px;
+  color: #fcfbfb;
+}
+
+.pill-html {
+      background-color: #f16529; /* Custom HTML Color */
+    }
+
+.pill-css {
+      background-color: #2965f1; /* Custom CSS Color */
+    }
+
+.pill-bootstrap {
+      background-color: #563d7c; /* Custom Bootstrap Color */
+    }
+
+.pill-js {
+      background-color: #f0db4f; /* Custom JavaScript Color */
+      color: #323330; /* Dark text for JS */
+    }
+
+.pill-c {
+      background-color: #00599c; /* Custom C Programming Color */
+    }
+.navbar.solid {
+  background-color: #07374a;
+  transition: background-color 1s ease 0s;
+  box-shadow: 0 0 4px rgb(7 55 74 / 20%);
+  z-index: 500;
+}
+
+.navbar.solid .navbar-brand {
+  display: inline-block;
+  color: #f0f0e6;
+  transition: color 1s ease 0s;
+}
+
+.navbar-brand {
+  display: none;
+  color: #f0f0e6;
+  font-weight: 400;
+}
+
+.work-arrow {
+  margin: 2rem 0;
+}
+
+.work-arrow a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #25b79f;
+}
+
+.work-arrow-2 {
+  margin: 2rem 0;
+}
+
+.work-arrow-2 a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #25b79f;
+  display: none;
+}
+
+/* ////.....Portfolio......///// */
+
+.portfolio-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.proj {
+  flex: 1;
+  padding: 20px;
+}
+
+.proj-details {
+  display: inline-block;
+}
+
+.divider {
+  width: 2px;
+  height: 150px;
+  background-color: #ccc;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  border: none;
+  background-color: #333;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button a {
+  text-decoration: none;
+  color: white;
+}
+
+button a:hover {
+  color: #ffeb3b;
+}
+
+.more-work {
+  margin-top: 30px;
+}
+
+.more-work a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.more-work a:hover {
+  text-decoration: underline;
+}
+
+.portfolio {
+  background: #25b79f;
+  padding: 6rem 0;
+}
+
+.proj-heading h1 {
+  text-align: center;
+  color: #07374a;
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin: 3rem 0;
+}
+
+.proj-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.proj-1 img {
+  height: 330px;
+  width: 380px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 20px 10px -10px rgb(37 41 52 / 31%);
+  margin-right: 1.7rem;
+}
+
+.proj-1 .proj1-details {
+  width: 32rem;
+}
+
+.proj-1 .proj1-details i {
+  font-size: 1.5rem;
+  color: #07374a;
+}
+
+.proj-1 .proj1-details h2 {
+  font-size: 2rem;
+  color: #07374a;
+}
+
+.proj-1 .proj1-details p {
+  font-size: 1.3rem;
+  color: #07374a;
+  font-weight: 600;
+}
+
+.proj-1 .proj1-details button {
+  background: #f0f0e6;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  width: 150px;
+  border: none;
+  border-bottom: 2px solid #07374a;
+}
+
+.proj-1 .proj1-details button a {
+  text-decoration: none;
+  color: #07374a;
+  font-size: 1.1rem;
+  transition: 0.2s ease-in-out;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+}
+
+.proj-1 .proj1-details button .fas {
+  font-size: 0.7rem;
+  padding: 0.3rem;
+  transition: 0.2s ease-in-out;
+}
+
+.proj-1 .proj1-details button:hover {
+  background: #07374a;
+}
+
+.proj-1 .proj1-details button:hover a,
+.proj-1 .proj1-details button:hover .fas {
+  color: #f0f0e6;
+}
+
+/* ////.....proj2.....//// */
+
+.proj-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.proj-2 img {
+  height: 330px;
+  width: 330px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 20px 10px -10px rgb(37 41 52 / 31%);
+  margin-right: 1.7rem;
+}
+
+.proj-2 .proj2-details {
+  width: 32rem;
+}
+
+.proj-2 .proj2-details i {
+  font-size: 1.5rem;
+  color: #07374a;
+}
+
+.proj-2 .proj2-details h2 {
+  font-size: 2rem;
+  color: #07374a;
+}
+
+.proj-2 .proj2-details p {
+  font-size: 1.3rem;
+  color: #07374a;
+  font-weight: 600;
+}
+
+.proj-2 .proj2-details button {
+  background: #f0f0e6;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  width: 150px;
+  border: none;
+  border-bottom: 2px solid #07374a;
+}
+
+.proj-2 .proj2-details button a {
+  text-decoration: none;
+  color: #07374a;
+  font-size: 1.1rem;
+  transition: 0.2s ease-in-out;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+}
+
+.proj-2 .proj2-details button .fas {
+  font-size: 0.7rem;
+  padding: 0.3rem;
+  transition: 0.2s ease-in-out;
+}
+
+.proj-2 .proj2-details button:hover {
+  background: #07374a;
+}
+
+.proj-2 .proj2-details button:hover a,
+.proj-2 .proj2-details button:hover .fas {
+  color: #f0f0e6;
+}
+
+.more-work {
+  text-align: center;
+  margin: 3rem 0 1rem 0;
+}
+
+.more-work p {
+  font-size: 1.6rem;
+  color: #07374a;
+  font-weight: 500;
+}
+
+.more-work a {
+  text-decoration: none;
+  color: #f0f0e6;
+  font-size: 1.3rem;
+}
+
+.more-work a:hover {
+  border-bottom: 2px solid #f0f0e6;
+}
+
+/* ////......Contact......///// */
+
+.contact {
+  background: #07374a;
+  position: relative;
+  height: 92vh;
+}
+
+.contact-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.contact-content h2 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #25b79f;
+  padding-bottom: 0.5rem;
+}
+
+.contact-content .mail {
+  color: #f0f0e6;
+  padding-bottom: 0.2rem;
+  font-size: 1rem;
+}
+
+.contact-content .links {
+  color: #25b79f;
+  padding: 0.5rem;
+  padding-bottom: 1.8rem;
+  font-size: 1rem;
+}
+
+.contact-content a {
+  text-decoration: none;
+  color: #25b79f;
+  padding: 0.5rem;
+  transition: 0.3s ease-in-out;
+}
+
+.contact-content a:hover {
+  color: #f0f0e6;
+}
+
+/* ////......Media query......//// */
+
+@media (max-width: 500px) {
+  html {
+    font-size: 60%;
+  }
+
+  .about-content .left-content {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .about-content .right-content {
+    flex-basis: 100%;
+  }
+
+  .skills {
+    width: 100%;
+  }
+
+  .skills-bar .bar .progress-line {
+    width: 100%;
+  }
+
+  .work-arrow {
+    display: none;
+  }
+
+  .right-content h1 {
+    margin-top: 3.2rem;
+  }
+
+  .proj-1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .proj-1 img {
+    height: 230px;
+    width: 290px;
+    margin-bottom: 0.5rem;
+  }
+
+  .proj-2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .proj-2 img {
+    height: 250px;
+    width: 290px;
+    margin-bottom: 0.5rem;
+  }
+
+  .work-arrow-2 a {
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: #25b79f;
+    display: block;
+    text-align: center;
+  }
+
+  .contact-content {
+    width: 100%;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 768px) {
+  html {
+    font-size: 65%;
+  }
+
+  .about-content .left-content {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .about-content .right-content {
+    flex-basis: 100%;
+  }
+
+  .skills {
+    width: 100%;
+  }
+
+  .skills-bar .bar .progress-line {
+    width: 100%;
+  }
+
+  .work-arrow {
+    display: none;
+  }
+
+  .right-content h1 {
+    margin-top: 3.2rem;
+  }
+
+  .proj-1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .proj-1 img {
+    height: 240px;
+    width: 290px;
+    margin-bottom: 0.5rem;
+  }
+
+  .proj-2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .proj-2 img {
+    height: 240px;
+    width: 290px;
+    margin-bottom: 0.5rem;
+  }
+
+  .work-arrow-2 a {
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: #25b79f;
+    display: block;
+    text-align: center;
+  }
+
+  .contact-content {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  html {
+    font-size: 70%;
+  }
+
+  .about-content .left-content {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .about-content .right-content {
+    flex-basis: 100%;
+  }
+
+  .skills {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .work-arrow {
+    display: none;
+  }
+
+  .left-content h1 {
+    margin-top: 3.2rem;
+    text-align: center;
+  }
+
+  .right-content h1 {
+    margin-top: 3.2rem;
+    text-align: center;
+  }
+
+  .work-arrow-2 a {
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: #25b79f;
+    display: block;
+    text-align: center;
+  }
+
+  .contact-content {
+    width: 100%;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .header {
+    height: 90vmax;
+  }
+}
+    </style>
 </head>
+
 <body>
-    <h1>Home Page</h1>
-    <p>go to projects</p>:
-    <a href="projects/">My Psgsethdrojects</a>
+  <header class="header">
+    <nav class="navbar">
+      <div class="navbar-container container">
+        <div>
+          <h1 class="navbar-brand">Siddharth Verma</h1>
+        </div>
+        <ul class="menu-items">
+          <li><a href="#about">About</a></li>
+          <li><a href="#my-works">Projects</a></li>
+          <li><a href="#contact-me">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="home-content" id="home-page">
+      <div class="name">
+        <h1>Hi, I'm Siddharth Verma</h1>
+        <p>A Programmer in training.</p>
+      </div>
+      <div class="angle-down-icon">
+        <a href="#about"><i class="fas fa-angle-down"></i></a>
+      </div>
+    </div>
+  </header>
+  <section class="about-me" id="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="left-content">
+          <div>
+            <h1 class="about-heading">About Me</h1>
+          </div>
+          <img src="haikyuu.png" alt="image" />
+          <p>
+
+            I am 18 year old, Bsc.CS student studying at Pillai College Of Arts, Commerce And Science.
+            I really enjoy solving problems as well as making things pretty and easy to use. I Love To learning new
+            things; The More, The Merrier.
+          </p>
+          <div class="work-arrow">
+            <p>
+              <a href="#my-works">Check out my work <i class="fas fa-arrow-down"></i></a>
+            </p>
+          </div>
+        </div>
+        <div class="right-content">
+          <div>
+            <h1 class="skills-heading">My Skills</h1>
+          </div>
+          <div class="skills-pill">
+            <span class="badge badge-pill pill-c">C/C++</span>
+            <span class="badge badge-pill pill-bootstrap">Python</span>
+            <span class="badge badge-pill pill-css">DigitalOcean</span>
+            <span class="badge badge-pill pill-js">AWS</span>
+            <span class="badge badge-pill pill-c">Django</span>
+            <span class="badge badge-pill pill-css">R</span>
+            <span class="badge badge-pill pill-html">HTML/CSS</span>
+          </div>
+        </div>
+            <div class="work-arrow-2">
+              <p>
+                <a href="#my-works">Check out my work <i class="fas fa-arrow-down"></i></a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="my-works">
+    <div class="portfolio">
+      <div class="proj-heading">
+        <h1>Projects</h1>
+      </div>
+      <div class="portfolio-content container">
+        <div class="proj-1 proj">
+          <div class="proj1-details">
+            <i class="fab fa-wordpress"></i>
+            <i class="fab fa-python"></i>
+            <h2>Genzstreams</h2>
+            <p>Built Using Wordpress , Python</p>
+            <button><a href="https://genzstreams.com/" target="_blank">Try it Live <i
+                  class="fas fa-external-link-alt"></i></a></button>
+          </div>
+        </div>
+
+        <div class="proj-2 proj">
+          <div class="proj2-details">
+            <i class="fab fa-code"></i>
+            <i class="fab fa-html5"></i>
+            <i class="fab fa-css3-alt"></i>
+            <h2>Expense Tracker</h2>
+            <p>Built Using Django</p>
+            <button><a href="https://github.com/SiddharthVerma2206/ExpenseTracker" target="_blank">View Source<i
+                  class="fas fa-external-link-alt"></i></a></button>
+            <button><a href="https://siddverma.in/projects/ExpenseTracker" target="_blank">Try it Live <i
+                  class="fas fa-external-link-alt"></i></a></button>
+          </div>
+        </div>
+      
+        <div class="more-work">
+          <p>More</p>
+          <a href="https://github.com/SiddharthVerma2206" target="_blank">Github</a>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  <div class="contact" id="contact-me">
+    <div class="container">
+      <div class="contact-content">
+        <h2>Contact Me</h2>
+        <p class="mail">
+          Get in touch with me <i class="fas fa-arrow-right"></i><a href="mailto:hi@siddverma.in" target="blank">hi@siddverma.in</a>
+        </p>
+        <p class="links">Or find me on:</p>
+        <a href="https://www.linkedin.com/in/sidverma2206/" target="blank"><i class="fab fa-linkedin">
+            Linkedin</i></a>
+        <a href="https://github.com/SiddharthVerma2206" target="blank"><i class="fab fa-github"></i> Github</a>
+        <a href="https://x.com/SidVerma2206" target="blank"><i class="fab fa-twitter"> Twitter</i></a>
+        <a href="https://www.instagram.com/sid_verma_2206/" target="blank"><i class="fab fa-instagram"></i> Instagram</a>
+      </div>
+    </div>
+  </div>
+  <!-- JAVASCRIPT -->
+  <script>
+    $(document).ready(function () {
+    $(window).scroll(function () {
+        // checks if window is scrolled more than 500px, adds/removes solid class
+        if ($(this).scrollTop() > 550) {
+            $('.navbar').addClass('solid');
+            $('.back-to-top').addClass('visible');
+        } else {
+            $('.navbar').removeClass('solid');
+            $('.back-to-top').removeClass('visible');
+        }
+
+    });
+});
+
+
+$(document).ready(function () {
+    // Add smooth scrolling to all links
+    $("a").on('click', function (event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function () {
+
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+            });
+        } // End if
+    });
+});
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>
+
 </html>
